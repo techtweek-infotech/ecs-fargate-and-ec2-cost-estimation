@@ -1,0 +1,40 @@
+-----------------------
+ECS FARGATE vs ECS EC2:
+-----------------------
+
+With the EC2 launch type, clusters are constructed as a fleet of Amazon Elastic Compute Cloud (EC2) instances. This provides control over the customization of your environment. However, 
+while you can benefit from being able to configure your infrastructure to meet your needs.
+
+With the Fargate launch type, you can concentrate on developing and maintaining your containerized applications. Fargate removes the need to provision and manage servers. Instead, you 
+simply specify the resources per task, which also improves security through application isolation by design. ECS then communicates with Fargate to launch, run, and manage the containers 
+on your behalf.
+
+The pricing for the EC2-based launch type is fixed to the memory and capacity provisioned for a chosen instance type. You pay for a full instance regardless of how much of it is being 
+used by the workload.
+
+ECS Fargate charges you by the CPU and memory requirements of your container, and how long it runs. You only ever pay for what your task uses.
+
+
+
+--------------------------------
+Pricing Details for ECS fargate:
+--------------------------------
+
+Number of tasks or pods: 1 per day * (730 hours in a month / 24 hours in a day) = 30.42 per month
+
+Pricing is calculated per second with a 1-minute minimum. Duration is calculated from the time you start to download your container image (Docker pull) until the task terminates, rounded 
+up to the nearest second.
+
+For Windows containers, billing is calculated per second with a 15-minute minimum.
+
+----------------------------
+Pricing Details for ECS EC2:
+----------------------------
+
+Amazon EC2 On-Demand instances (monthly) = 32.70 USD
+EBS Storage Cost                         = 2.28 USD
+Total monthly cost:                      = 34.98 USD
+ 
+
+
+
